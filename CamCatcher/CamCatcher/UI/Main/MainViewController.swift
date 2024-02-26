@@ -123,6 +123,10 @@ extension MainViewController: UITableViewDataSource {
         return viewModel?.images.count ?? 0
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        160
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ImageViewCell.identifier, for: indexPath) as? ImageViewCell else {
             fatalError("No se pudo crear una instancia de ImageViewCell.")

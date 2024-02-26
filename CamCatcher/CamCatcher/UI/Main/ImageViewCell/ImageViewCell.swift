@@ -18,13 +18,25 @@ class ImageViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        configurePicture()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configurePicture() {
+        ivImage.contentMode = .scaleAspectFill
+        ivImage.clipsToBounds = true // Esto es importante para asegurarse de que la imagen no se desborde de los límites de la vista
+        ivImage.layer.cornerRadius = 10
+        ivImage.layer.borderWidth = 1
+        ivImage.layer.borderColor = UIColor.black.cgColor
+        ivImage.layer.masksToBounds = true
+        ivImage.backgroundColor = .clear
+        
     }
     
 }
