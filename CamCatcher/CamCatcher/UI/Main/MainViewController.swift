@@ -12,17 +12,32 @@ class MainViewController: UIViewController {
     // MARK: - Properties
     private var viewModel: MainViewModel?
     
+    // MARK: - Outlets
+    @IBOutlet weak var tbMainToolbar: UIToolbar!
+    @IBOutlet weak var tbbAddButton: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        configureAddButton()
+}
 
-    // MARK: - Functions
+
+    // MARK: - Methods
     
     // Función para configurar el viewModel
     func set(viewModel: MainViewModel) {
         self.viewModel = viewModel
     }
+    
+    func configureAddButton() {
+        tbbAddButton.customView?.centerYAnchor.constraint(equalTo: tbMainToolbar.centerYAnchor).isActive = true
+        tbbAddButton.customView?.centerXAnchor.constraint(equalTo: tbMainToolbar.centerXAnchor).isActive = true
+    }
 
+
+    // MARK: - Actions
+    @IBAction func tbbPushAddButton(_ sender: Any) {
+    }
 }
