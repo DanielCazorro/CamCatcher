@@ -14,9 +14,9 @@ class MainViewController: UIViewController, UITableViewDelegate {
     private var viewModel: MainViewModel?
     
     // MARK: - Outlets
-    @IBOutlet weak var tbMainToolbar: UIToolbar!
-    @IBOutlet weak var tbbAddButton: UIBarButtonItem!
-    @IBOutlet weak var tbMainTableView: UITableView!
+    @IBOutlet weak var tbMainToolbar: UIToolbar! // Barra de herramientas que contiene el botón de añadir
+    @IBOutlet weak var tbbAddButton: UIBarButtonItem! // Botón de añadir en la barra de herramientas
+    @IBOutlet weak var tbMainTableView: UITableView! // Tabla para mostrar las imágenes
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,7 +26,6 @@ class MainViewController: UIViewController, UITableViewDelegate {
         viewModel = MainViewModel(dataManager: MainViewDataManager())
         
         configureTableView()
-//        configureAddButton()
     }
 
     // MARK: - Methods
@@ -36,73 +35,18 @@ class MainViewController: UIViewController, UITableViewDelegate {
         self.viewModel = viewModel
     }
     
+    /// Configura la vista de tabla (UITableView)
     func configureTableView() {
         tbMainTableView.dataSource = self
         tbMainTableView.delegate = self
-        
+        // Registra el nib (archivo XIB) para la celda personalizada ImageViewCell
         tbMainTableView.register(UINib(nibName: ImageViewCell.identifier, bundle: nil), forCellReuseIdentifier: ImageViewCell.identifier)
     }
 
-    /// Configurar el botón de añadir en el toolbar
-//    func configureAddButton() {
-//        // TODO: Center the button
-//        
-//        // Agregar acción al botón de añadir
-//        tbbAddButton.target = self
-//        tbbAddButton.action = #selector(addButtonTapped)
-//    }
-    
-//    /// Método llamado cuando se toca el botón de añadir
-//     @objc private func addButtonTapped() {
-//         viewModel?.presentImagePicker(from: self)
-//     }
-    
-    /// Método llamado cuando se toca el botón de añadir
-//    @objc func addButtonTapped() {
-//        // Mostrar el pop-up para elegir entre la galería y la cámara
-//        let alertController = UIAlertController(title: "Añadir imagen a la tabla", message: "Elija una opción", preferredStyle: .actionSheet)
-//        
-//        // Acción para seleccionar de la galería
-//        let galleryAction = UIAlertAction(title: "Seleccionar de la galería", style: .default) { _ in
-//            self.showImagePicker(sourceType: .photoLibrary)
-//        }
-//        
-//        // Acción para tomar una foto con la cámara
-//        let cameraAction = UIAlertAction(title: "Tomar foto", style: .default) { _ in
-//            self.showImagePicker(sourceType: .camera)
-//        }
-//        
-//        // Acción para cancelar
-//        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
-//        
-//        alertController.addAction(galleryAction)
-//        alertController.addAction(cameraAction)
-//        alertController.addAction(cancelAction)
-//        
-//        // Presentar el pop-up
-//        present(alertController, animated: true, completion: nil)
-//    }
-    
-//    /// Método para mostrar el selector de imágenes
-//    func showImagePicker(sourceType: UIImagePickerController.SourceType) {
-//        // Verificar si el tipo de fuente está disponible
-//        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-//            let imagePicker = UIImagePickerController()
-//            imagePicker.sourceType = sourceType
-//            imagePicker.delegate = self
-//            present(imagePicker, animated: true, completion: nil)
-//        } else {
-//            print("La fuente seleccionada no está disponible.")
-//        }
-//    }
-
-
     // MARK: - Actions
+    /// Acción llamada cuando se pulsa el botón de añadir en el toolbar
     @IBAction func tbbPushAddButton(_ sender: Any) {
-        viewModel?.presentImagePicker(from: self)
-
-        // Acción del botón de añadir en la barra de herramientas
-        //TODO: Aquí añadir viewmodel acción de pulsar y toda la lógica de arriba
+        viewModel?.presentImagePicker(from: self) // Solicita al viewModel que presente el selector de imágenes/
     }
 }
 
@@ -129,11 +73,12 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Devuelve el número de imágenes en el viewModel, o cero si el viewModel es nulo
         return viewModel?.images.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        160
+        160 // Altura de cada fila de la tabla (en puntos)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -141,15 +86,15 @@ extension MainViewController: UITableViewDataSource {
             fatalError("No se pudo crear una instancia de ImageViewCell.")
         }
         
-        // Obtener la imagen del viewModel
+        // Obtiene la imagen del viewModel y la asigna a la vista de imagen en la celda
         if let image = viewModel?.images[indexPath.row] {
             // Asignar la imagen a la vista de imagen en la celda
             cell.ivImage.image = image
         } else {
             // Si no hay imagen disponible, puedes establecer una imagen de placeholder o dejarla vacía
-            cell.ivImage.image = UIImage(systemName: "person.fill") // Cambia "placeholder_image" por el nombre de tu imagen de placeholder si la tienes
+            cell.ivImage.image = UIImage(systemName: "person.fill")
         }
         
-        return cell
+        return cell // Devuelve la celda configurada para mostrar una imagen
     }
 }
