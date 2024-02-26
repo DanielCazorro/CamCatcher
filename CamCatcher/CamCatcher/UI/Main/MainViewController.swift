@@ -32,8 +32,8 @@ class MainViewController: UIViewController {
     }
     
     func configureAddButton() {
-        tbbAddButton.customView?.centerYAnchor.constraint(equalTo: tbMainToolbar.centerYAnchor).isActive = true
-        tbbAddButton.customView?.centerXAnchor.constraint(equalTo: tbMainToolbar.centerXAnchor).isActive = true
+        // TODO: Center the button
+
     }
 
 
