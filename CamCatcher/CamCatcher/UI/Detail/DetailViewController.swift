@@ -11,14 +11,16 @@ class DetailViewController: UIViewController {
 
     // MARK: - Properties
     private var viewModel: DetailViewModel?
+    // Propiedad para almacenar la imagen
+    var image: UIImage?
     
     // MARK: - Outlets
     @IBOutlet weak var imImageFull: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // Configurar la imagen en la vista de imagen
+        imImageFull.image = image
     }
 
     func set(viewModel: DetailViewModel) {
