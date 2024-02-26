@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+class MainViewModel {
+    
+    // MARK: - Properties
+    private var dataManager: MainviewDataManager
+    
+    // MARK: - Init
+    init(dataManager: MainviewDataManager) {
+        self.dataManager = dataManager
+    }
+    
+}
