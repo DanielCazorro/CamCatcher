@@ -18,6 +18,10 @@
 		2C527B102B8C917500992C89 /* MainViewWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C527B0F2B8C917500992C89 /* MainViewWireframe.swift */; };
 		2C527B142B8CA61900992C89 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C527B122B8CA61900992C89 /* ImageViewCell.swift */; };
 		2C527B152B8CA61900992C89 /* ImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C527B132B8CA61900992C89 /* ImageViewCell.xib */; };
+		2CFAFCF52B8CC42F009CCF84 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAFCF32B8CC42F009CCF84 /* DetailViewController.swift */; };
+		2CFAFCF62B8CC42F009CCF84 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CFAFCF42B8CC42F009CCF84 /* DetailViewController.xib */; };
+		2CFAFCF82B8CC439009CCF84 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAFCF72B8CC439009CCF84 /* DetailViewModel.swift */; };
+		2CFAFCFA2B8CC442009CCF84 /* DetailViewWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAFCF92B8CC442009CCF84 /* DetailViewWireframe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		2C527B0F2B8C917500992C89 /* MainViewWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewWireframe.swift; sourceTree = "<group>"; };
 		2C527B122B8CA61900992C89 /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		2C527B132B8CA61900992C89 /* ImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewCell.xib; sourceTree = "<group>"; };
+		2CFAFCF32B8CC42F009CCF84 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2CFAFCF42B8CC42F009CCF84 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		2CFAFCF72B8CC439009CCF84 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		2CFAFCF92B8CC442009CCF84 /* DetailViewWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewWireframe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 			children = (
 				2C527AFA2B8C8C9500992C89 /* LaunchScreen */,
 				2C527B062B8C910B00992C89 /* Main */,
+				2CFAFCF22B8CC414009CCF84 /* Detail */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -120,6 +129,17 @@
 				2C527B122B8CA61900992C89 /* ImageViewCell.swift */,
 			);
 			path = ImageViewCell;
+			sourceTree = "<group>";
+		};
+		2CFAFCF22B8CC414009CCF84 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2CFAFCF42B8CC42F009CCF84 /* DetailViewController.xib */,
+				2CFAFCF32B8CC42F009CCF84 /* DetailViewController.swift */,
+				2CFAFCF72B8CC439009CCF84 /* DetailViewModel.swift */,
+				2CFAFCF92B8CC442009CCF84 /* DetailViewWireframe.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +202,7 @@
 			files = (
 				2C527B152B8CA61900992C89 /* ImageViewCell.xib in Resources */,
 				2C527AF12B8C8C1E00992C89 /* LaunchScreen.storyboard in Resources */,
+				2CFAFCF62B8CC42F009CCF84 /* DetailViewController.xib in Resources */,
 				2C527B0A2B8C913A00992C89 /* MainViewController.xib in Resources */,
 				2C527AEE2B8C8C1E00992C89 /* Assets.xcassets in Resources */,
 			);
@@ -198,9 +219,12 @@
 				2C527B142B8CA61900992C89 /* ImageViewCell.swift in Sources */,
 				2C527AE52B8C8C1D00992C89 /* AppDelegate.swift in Sources */,
 				2C527B102B8C917500992C89 /* MainViewWireframe.swift in Sources */,
+				2CFAFCF82B8CC439009CCF84 /* DetailViewModel.swift in Sources */,
 				2C527B0E2B8C916A00992C89 /* MainViewDataManager.swift in Sources */,
 				2C527AE72B8C8C1D00992C89 /* SceneDelegate.swift in Sources */,
 				2C527B0C2B8C916000992C89 /* MainViewModel.swift in Sources */,
+				2CFAFCFA2B8CC442009CCF84 /* DetailViewWireframe.swift in Sources */,
+				2CFAFCF52B8CC42F009CCF84 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
