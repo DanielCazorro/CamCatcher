@@ -22,7 +22,6 @@ class MainViewWireframe {
         // Creamos una instancia de MainViewModel que utilizará el dataManager
         let viewModel: MainViewModel = createViewModel(with: dataManager)
         
-        
         // Configuramos el viewModel en el viewController
         viewController.set(viewModel: viewModel)
         
