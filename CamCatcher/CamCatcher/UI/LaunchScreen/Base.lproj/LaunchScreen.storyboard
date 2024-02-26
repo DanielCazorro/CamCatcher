@@ -16,18 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CamCatcher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrs-ll-ugI">
-                                <rect key="frame" x="98.666666666666671" y="404.66666666666669" width="195.66666666666663" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" red="0.63435374150000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="F2u-gd-jmB">
+                                <rect key="frame" x="98.666666666666671" y="383" width="195.66666666666663" height="86"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CamCatcher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrs-ll-ugI">
+                                        <rect key="frame" x="0.0" y="0.0" width="195.66666666666666" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <color key="textColor" red="0.63435374150000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.tv" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="X8p-8R-2fi">
+                                        <rect key="frame" x="0.0" y="44" width="195.66666666666666" height="41.333333333333329"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nrs-ll-ugI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Lhl-63-wkF"/>
-                            <constraint firstItem="nrs-ll-ugI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="snM-XK-GFd"/>
+                            <constraint firstItem="F2u-gd-jmB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="B1R-op-ZFM"/>
+                            <constraint firstItem="F2u-gd-jmB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cR1-PA-v4g"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +45,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="photo.tv" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
