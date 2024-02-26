@@ -10,10 +10,10 @@ import Foundation
 class MainViewModel {
     
     // MARK: - Properties
-    private var dataManager: MainviewDataManager
+    private var dataManager: MainViewDataManager
     
     // MARK: - Init
-    init(dataManager: MainviewDataManager) {
+    init(dataManager: MainViewDataManager) {
         self.dataManager = dataManager
     }
     
