@@ -44,8 +44,10 @@ class MainViewWireframe {
     // MARK: - Public Methods
     
     /// Función genérica para navegar a otro ViewController
-    func push(navigation: UINavigationController?) {
-        guard let navigation = navigation else { return }
-        navigation.pushViewController(viewController, animated: true)
+    func pushDetailViewController(navigationController: UINavigationController?, with image: UIImage?) {
+        guard let navigationController = navigationController, let image = image else { return }
+        let detailViewController = DetailViewController()
+        detailViewController.image = image
+        navigationController.pushViewController(detailViewController, animated: true)
     }
 }

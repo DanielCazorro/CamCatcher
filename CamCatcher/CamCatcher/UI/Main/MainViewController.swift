@@ -11,7 +11,7 @@ import Photos
 class MainViewController: UIViewController, UITableViewDelegate {
 
     // MARK: - Properties
-    private var viewModel: MainViewModel?
+    private var viewModel: MainViewModel? // ViewModel que maneja la lógica de la vista
     
     // MARK: - Outlets
     @IBOutlet weak var tbMainToolbar: UIToolbar! // Barra de herramientas que contiene el botón de añadir
@@ -21,10 +21,9 @@ class MainViewController: UIViewController, UITableViewDelegate {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Inicializar el viewModel
         viewModel = MainViewModel(dataManager: MainViewDataManager())
-        
+        // Configurar la vista de tabla
         configureTableView()
     }
 
@@ -78,7 +77,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        160 // Altura de cada fila de la tabla (en puntos)
+        104 // Altura de cada fila de la tabla (en puntos)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,5 +95,13 @@ extension MainViewController: UITableViewDataSource {
         }
         
         return cell // Devuelve la celda configurada para mostrar una imagen
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let image = viewModel?.images[indexPath.row] {
+            // Utilizamos el wireframe para navegar a la vista de detalle
+            MainViewWireframe().pushDetailViewController(navigationController: navigationController, with: image)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
