@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="CamCatcher" customModuleProvider="target">
             <connections>
+                <outlet property="tbMainTableView" destination="HCf-tE-HIR" id="gBH-kk-Kef"/>
                 <outlet property="tbMainToolbar" destination="Ium-RZ-qg8" id="5jB-5t-Ppe"/>
                 <outlet property="tbbAddButton" destination="ZZc-IP-cWm" id="yb8-0x-heQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -30,13 +31,21 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HCf-tE-HIR">
+                    <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ium-RZ-qg8" secondAttribute="bottom" id="5RG-cu-utD"/>
+                <constraint firstItem="HCf-tE-HIR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DmW-gB-cBa"/>
                 <constraint firstItem="Ium-RZ-qg8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="SUf-4k-wuC"/>
+                <constraint firstItem="HCf-tE-HIR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VVE-uc-xIL"/>
                 <constraint firstItem="Ium-RZ-qg8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ae4-W2-GKy"/>
+                <constraint firstItem="Ium-RZ-qg8" firstAttribute="top" secondItem="HCf-tE-HIR" secondAttribute="bottom" id="l7o-U3-pfT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HCf-tE-HIR" secondAttribute="trailing" id="y7f-pU-izY"/>
             </constraints>
             <point key="canvasLocation" x="-24" y="20"/>
         </view>
