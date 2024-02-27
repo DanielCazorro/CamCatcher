@@ -20,13 +20,15 @@ struct MainView: View {
                     .frame(width: 100, height: 100)
             }
             .navigationTitle("Pictures")
-            .navigationBarItems(trailing:
-                                    Button(action : {
-                viewModel.presentImagePicker()
-            }) {
-                Image(systemName: "plus")
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Button(action : {
+                        viewModel.presentImagePicker()
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                }
             }
-            )
             .sheet(isPresented: $viewModel.showImagePicker) {
                 // Aquí se presenta la hoja de presentación que contiene el selector de imágenes
                 if let coordinator = viewModel.imagePickerCoordinator {
