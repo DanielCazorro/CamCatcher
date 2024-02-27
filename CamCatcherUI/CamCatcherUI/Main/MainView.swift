@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MainView: View {
     
@@ -41,6 +42,15 @@ struct MainView: View {
                         Image(systemName: "plus") // Icono de más para añadir imágenes
                     }
                 }
+                
+                ToolbarItem(placement: .bottomBar) {
+                    Button(action: {
+                        // Aquí puedes implementar la lógica para el nuevo botón
+                    }) {
+                        Text("CameraUI")
+                    }
+                }
+            
             }
             .actionSheet(isPresented: $showImagePicker) {
                 // Hoja de acción para elegir entre seleccionar una foto de la galería o tomar una foto con la cámara
