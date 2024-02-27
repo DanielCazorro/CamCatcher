@@ -1,6 +1,6 @@
 # CamCatcher
 
-CamCatcher es una aplicación móvil desarrollada en Swift que te permite capturar imágenes utilizando la cámara o seleccionándolas desde la galería, y mostrarlas en una lista y en pantalla completa.
+CamCatcher es una aplicación móvil desarrollada en Swift que te permite capturar imágenes utilizando la cámara o seleccionándolas desde la galería, y mostrarlas en una lista y en pantalla completa. Hay dos versiones, una en SwiftUI y otra en UIKit. Ambas similares y funcionando perfectamente.
 
 ## Características
 
