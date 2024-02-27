@@ -16,8 +16,13 @@ struct MainView: View {
             List(viewModel.images, id: \.self) { image in
                 Image(uiImage: image)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 80, maxHeight: 80) // Ocupa todo el espacio disponible
+                    .clipped() // Recorta la imagen para que no se extienda más allá de la celda
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+                    .padding(5)
+                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
             }
             .navigationTitle("Pictures")
             .toolbar {
