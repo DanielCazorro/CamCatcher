@@ -18,13 +18,13 @@ final class MainViewModel: NSObject, ObservableObject {
     // Coordinator para el UIImagePickerController
     var imagePickerCoordinator: ImagePickerCoordinator?
 
-    // Método para alternar el valor de showImagePicker
+    /// Método para alternar el valor de showImagePicker
     func toggleImagePicker() {
         self.showImagePicker.toggle()
         print("Show image picker: \(self.showImagePicker ? "true" : "false")")
     }
     
-    // Función para presentar el selector de imágenes
+    /// Función para presentar el selector de imágenes
     func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
         // Asignar una nueva instancia de ImagePickerCoordinator a imagePickerCoordinator
         imagePickerCoordinator = ImagePickerCoordinator(self)
@@ -56,30 +56,29 @@ class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImageP
     
     init(_ parent: MainViewModel) {
         self.parent = parent
-        print("Image Picker Coordinator initialized")
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            parent.images.append(pickedImage)
+            parent.images.append(pickedImage) // Agregar la imagen seleccionada al array de imágenes en el ViewModel
         }
-        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil) // Descartar el controlador de selección de imágenes
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil) // Descartar el controlador de selección de imágenes al cancelar
     }
 }
 
 extension MainViewModel: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            images.append(pickedImage)
+            images.append(pickedImage) // Agregar la imagen seleccionada al array de imágenes en el ViewModel
         }
-        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil) // Descartar el controlador de selección de imágenes
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil) // Descartar el controlador de selección de imágenes al cancelar
     }
 }
