@@ -12,6 +12,7 @@
 		2CBA58B62B8DCE92007E597A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBA58B52B8DCE92007E597A /* Preview Assets.xcassets */; };
 		2CBA58BE2B8DCF4A007E597A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA58BD2B8DCF4A007E597A /* MainView.swift */; };
 		2CBA58C02B8DCF78007E597A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA58BF2B8DCF78007E597A /* MainViewModel.swift */; };
+		2CBA58C22B8DDA21007E597A /* ImagePickerCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA58C12B8DDA21007E597A /* ImagePickerCoordinatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		2CBA58B52B8DCE92007E597A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CBA58BD2B8DCF4A007E597A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2CBA58BF2B8DCF78007E597A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		2CBA58C12B8DDA21007E597A /* ImagePickerCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				2CBA58BD2B8DCF4A007E597A /* MainView.swift */,
 				2CBA58BF2B8DCF78007E597A /* MainViewModel.swift */,
+				2CBA58C12B8DDA21007E597A /* ImagePickerCoordinatorView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				2CBA58BE2B8DCF4A007E597A /* MainView.swift in Sources */,
 				2CBA58AF2B8DCE91007E597A /* CamCatcherUIApp.swift in Sources */,
+				2CBA58C22B8DDA21007E597A /* ImagePickerCoordinatorView.swift in Sources */,
 				2CBA58C02B8DCF78007E597A /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

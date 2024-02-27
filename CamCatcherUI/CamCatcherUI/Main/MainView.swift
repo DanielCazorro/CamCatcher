@@ -22,11 +22,17 @@ struct MainView: View {
             .navigationTitle("Pictures")
             .navigationBarItems(trailing:
                                     Button(action : {
-                viewModel.presentImagePcier()
+                viewModel.presentImagePicker()
             }) {
                 Image(systemName: "plus")
             }
             )
+            .sheet(isPresented: $viewModel.showImagePicker) {
+                // Aquí se presenta la hoja de presentación que contiene el selector de imágenes
+                if let coordinator = viewModel.imagePickerCoordinator {
+                    ImagePickerCoordinatorView(imagePickerCoordinator: coordinator)
+                }
+            }
         }
     }
 }
