@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CAA5DDA2B8DFE0300E4AD25 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAA5DD92B8DFE0300E4AD25 /* DetailView.swift */; };
 		2CBA58AF2B8DCE91007E597A /* CamCatcherUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA58AE2B8DCE91007E597A /* CamCatcherUIApp.swift */; };
 		2CBA58B32B8DCE92007E597A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBA58B22B8DCE92007E597A /* Assets.xcassets */; };
 		2CBA58B62B8DCE92007E597A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBA58B52B8DCE92007E597A /* Preview Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CAA5DD92B8DFE0300E4AD25 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		2CBA58AB2B8DCE91007E597A /* CamCatcherUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamCatcherUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBA58AE2B8DCE91007E597A /* CamCatcherUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamCatcherUIApp.swift; sourceTree = "<group>"; };
 		2CBA58B22B8DCE92007E597A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -23,6 +25,7 @@
 		2CBA58BD2B8DCF4A007E597A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2CBA58BF2B8DCF78007E597A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		2CBA58C12B8DDA21007E597A /* ImagePickerCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinatorView.swift; sourceTree = "<group>"; };
+		2CBA58C32B8DEC71007E597A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CAA5DD82B8DFDF500E4AD25 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2CAA5DD92B8DFE0300E4AD25 /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		2CBA58A22B8DCE91007E597A = {
 			isa = PBXGroup;
 			children = (
@@ -55,8 +66,10 @@
 		2CBA58AD2B8DCE91007E597A /* CamCatcherUI */ = {
 			isa = PBXGroup;
 			children = (
+				2CBA58C32B8DEC71007E597A /* Info.plist */,
 				2CBA58AE2B8DCE91007E597A /* CamCatcherUIApp.swift */,
 				2CBA58BC2B8DCED9007E597A /* Main */,
+				2CAA5DD82B8DFDF500E4AD25 /* Detail */,
 				2CBA58B22B8DCE92007E597A /* Assets.xcassets */,
 				2CBA58B42B8DCE92007E597A /* Preview Content */,
 			);
@@ -154,6 +167,7 @@
 				2CBA58BE2B8DCF4A007E597A /* MainView.swift in Sources */,
 				2CBA58AF2B8DCE91007E597A /* CamCatcherUIApp.swift in Sources */,
 				2CBA58C22B8DDA21007E597A /* ImagePickerCoordinatorView.swift in Sources */,
+				2CAA5DDA2B8DFE0300E4AD25 /* DetailView.swift in Sources */,
 				2CBA58C02B8DCF78007E597A /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +305,8 @@
 				DEVELOPMENT_TEAM = 9GK3478S4Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CamCatcherUI/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app use the camera to show pictures";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -320,6 +336,8 @@
 				DEVELOPMENT_TEAM = 9GK3478S4Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CamCatcherUI/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app use the camera to show pictures";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
