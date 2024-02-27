@@ -17,16 +17,19 @@ final class MainViewModel: ObservableObject {
     
     // Coordinator para el UIImagePickerController
     var imagePickerCoordinator: ImagePickerCoordinator?
-    
+
     // Método para alternar el valor de showImagePicker
     func toggleImagePicker() {
         self.showImagePicker.toggle()
     }
     
     // Función para presentar el selector de imágenes
-    func presentImagePicker() {
+    func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
         // Asignar una nueva instancia de ImagePickerCoordinator a imagePickerCoordinator
         imagePickerCoordinator = ImagePickerCoordinator(self)
+
+        // Configurar el sourceType en el coordinador
+        imagePickerCoordinator?.sourceType = sourceType
         
         // Cambiar el valor de showImagePicker para mostrar la hoja de presentación
         toggleImagePicker()
@@ -35,6 +38,7 @@ final class MainViewModel: ObservableObject {
 
 class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var parent: MainViewModel
+    var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
     init(_ parent: MainViewModel) {
         self.parent = parent

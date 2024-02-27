@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     @ObservedObject var viewModel: MainViewModel
+    @State private var showImagePicker = false
     
     var body: some View {
         NavigationView{
@@ -28,11 +29,25 @@ struct MainView: View {
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     Button(action : {
-                        viewModel.presentImagePicker()
+                        showImagePicker = true
                     }) {
                         Image(systemName: "plus")
                     }
                 }
+            }
+            .actionSheet(isPresented: $showImagePicker) {
+                ActionSheet(
+                    title: Text("Seleccionar imagen"),
+                    buttons: [
+                        .default(Text("Seleccionar foto de Galería")) {
+                            viewModel.presentImagePicker(sourceType: .photoLibrary)
+                        },
+                        .default(Text("Tomar foto")) {
+                            viewModel.presentImagePicker(sourceType: .camera)
+                        },
+                        .cancel()
+                    ]
+                )
             }
             .sheet(isPresented: $viewModel.showImagePicker) {
                 // Aquí se presenta la hoja de presentación que contiene el selector de imágenes
