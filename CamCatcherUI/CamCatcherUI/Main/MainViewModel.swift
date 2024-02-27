@@ -21,7 +21,6 @@ final class MainViewModel: NSObject, ObservableObject {
     /// Método para alternar el valor de showImagePicker
     func toggleImagePicker() {
         self.showImagePicker.toggle()
-        print("Show image picker: \(self.showImagePicker ? "true" : "false")")
     }
     
     /// Función para presentar el selector de imágenes

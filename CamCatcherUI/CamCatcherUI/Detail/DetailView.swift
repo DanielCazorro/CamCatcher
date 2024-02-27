@@ -11,11 +11,12 @@ struct DetailView: View {
     var image: UIImage
     
     var body: some View {
+        // Muestra la imagen en una vista redimensionable y con aspecto de ajuste
         Image(uiImage: image)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .edgesIgnoringSafeArea(.all)
-            .navigationBarTitle("", displayMode: .inline)
+            .edgesIgnoringSafeArea(.all) // Ignora los márgenes seguros para que la imagen ocupe toda la pantalla
+            .navigationBarTitle("", displayMode: .inline) // Configura el título de la barra de navegación
     }
 }
 
